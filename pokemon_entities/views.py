@@ -72,7 +72,7 @@ def show_pokemon(request, pokemon_id):
         "title_ru": pokemon.title,
         "title_en": getattr(pokemon, 'title_en', ''),
         "title_jp": getattr(pokemon, 'title_jp', ''),
-        "description": getattr(pokemon, 'description', ''),
+        "description": pokemon.description,
         "img_url": request.build_absolute_uri(pokemon.image.url) if pokemon.image else None,
         "entities": [{
             "level": entity.level,
