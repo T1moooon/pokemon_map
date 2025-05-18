@@ -70,8 +70,8 @@ def show_pokemon(request, pokemon_id):
     pokemon_dict = {
         "pokemon_id": pokemon.id,
         "title_ru": pokemon.title,
-        "title_en": getattr(pokemon, 'title_en', ''),
-        "title_jp": getattr(pokemon, 'title_jp', ''),
+        "title_en": pokemon.title_en,
+        "title_jp": pokemon.title_jp,
         "description": pokemon.description,
         "img_url": request.build_absolute_uri(pokemon.image.url) if pokemon.image else None,
         "entities": [{
