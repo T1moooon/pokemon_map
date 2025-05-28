@@ -68,7 +68,7 @@ def show_pokemon(request, pokemon_id):
     )
 
     next_evolution = None
-    if hasattr(pokemon, 'next_evolutions') and pokemon.next_evolutions.exists():
+    if pokemon.next_evolutions.exists():
         next_pokemon = pokemon.next_evolutions.first()
         next_evolution = {
             "title_ru": next_pokemon.title,
